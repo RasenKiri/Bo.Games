@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Baza gier | BoardList</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <nav class="navbar">
+      <div class="logo">BoardList</div>
+      <ul class="nav-links">
+        <li><a href="main.html">Główna</a></li>
+        <li><a href="#">Moje Gry</a></li>
+        <li><a href="#">Chcę Zagrać</a></li>
+        <li><a href="#">Profil</a></li>
+        <li><a href="login.html">Zaloguj</a></li>
+      </ul>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="game-list-container">
+    <h1>Baza gier planszowych</h1>
+
+    <div class="controls">
+      <input type="text" id="searchInput" placeholder="Szukaj po tytule..." />
+
+      <select id="sortSelect">
+        <option value="date">Sortuj: Data publikacji</option>
+        <option value="wantToPlay">Sortuj: Chcę zagrać</option>
+        <option value="played">Sortuj: Grałem</option>
+        <option value="rating">Sortuj: Ocena</option>
+      </select>
+    </div>
+
+    <div id="gamesContainer" class="games-grid"></div>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 BoardList</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

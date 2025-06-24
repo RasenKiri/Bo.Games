@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Rejestracja | BoardList</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <nav class="navbar">
+      <div class="logo">Bo.Games</div>
+      <ul class="nav-links">
+        <li><a href="main.html">Główna</a></li>
+        <li><a href="#">Moje Gry</a></li>
+        <li><a href="#">Chcę Zagrać</a></li>
+        <li><a href="#">Profil</a></li>
+        <li><a href="login.html">Zaloguj</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="auth-container">
+    <form class="login-form" id="registerForm">
+      <h2>Rejestracja</h2>
+
+      <label for="username">Nazwa użytkownika:</label>
+      <input type="text" id="username" required />
+
+      <label for="email">Email:</label>
+      <input type="email" id="email" required />
+
+      <label for="password">Hasło:</label>
+      <input type="password" id="password" required />
+
+      <label for="confirmPassword">Powtórz hasło:</label>
+      <input type="password" id="confirmPassword" required />
+
+      <p class="login-back">
+        Masz już konto?
+        <a href="login.html">Zaloguj się!</a>
+      </p>
+
+      <p class="error-message" id="errorMessage"></p>
+
+      <button type="submit">Zarejestruj</button>
+    </form>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Bo.Games - Twoja lista gier planszowych</p>
+  </footer>
+
+  <script>
+    document.getElementById("registerForm").addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      const username = document.getElementById("username").value.trim();
+      const email = document.getElementById("email").value.trim();
+      const password = document.getElementById("password").value.trim();
+      const confirmPassword = document.getElementById("confirmPassword").value.trim();
+      const errorMessage = document.getElementById("errorMessage");
+
+      if (!username || !email || !password || !confirmPassword) {
+        errorMessage.textContent = "Uzupełnij wszystkie pola.";
+        return;
+      }
+
+      if (password !== confirmPassword) {
+        errorMessage.textContent = "Hasła nie są takie same.";
+        return;
+      }
+
+      // Symulacja rejestracji
+      alert("Zarejestrowano pomyślnie!");
+      window.location.href = "login.html";
+    });
+  </script>
+</body>
+</html>
